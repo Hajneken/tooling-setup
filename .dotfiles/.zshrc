@@ -123,26 +123,60 @@ export PATH=/home/hajneken/anaconda3/bin:$PATH
 ### The --clear option make sure Intruder cannot use your existing SSH-Agents keys 
 ### i.e. Only allow cron jobs to use password less login 
 #####################################################################################
-/usr/bin/keychain --clear $HOME/.ssh/id_rsa
-source $HOME/.keychain/towelDispenser-sh
+# /usr/bin/keychain --clear $HOME/.ssh/id_rsa
+# source $HOME/.keychain/towelDispenser-sh
 
 # Aliases 
 # ========================
-# PATHS 
+# download stuff
+# magnet:?xt=urn:btih:HASH
+magnet() {
+    /mnt/c/Program\ Files/Transmission/transmission-qt.exe "magnet:?xt=urn:btih:$1";
+}
+
+# copy folder contents 
+nextBootStrap(){
+cp -r "/home/hajneken/projects/next/next-setup/src"* "$(pwd)";
+}
+
+
+# productivity 
+alias pomodoro="/home/hajneken/tomatoshell/tomatoshell -f $1"
+
+# get machines IP
+alias getip="ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
+
+# config setting here
+alias aliases="code ~/.zshrc"
+# SSH 
+alias school="ssh hynekz20@almighty.cs.univie.ac.at"
+# School
 alias MRE="cd /home/hajneken/UNI/MRE/A3/12010957-hynek-zemanec"
 alias NLP="cd /home/hajneken/UNI/NLP"
 alias VIS="cd /home/hajneken/UNI/VIS/A5"
-alias ADS="cd /home/hajneken/UNI/ADS"
+alias ADS="cd /home/hajneken/UNI/ADS/ADS_PROJECT"
+alias P1="cd /home/hajneken/UNI/P1/12010957-hynek-zemanec"
+
+# Projects
 alias p="cd /home/hajneken/projects"
 
 # GIT 
 alias gs="git status"
 alias gc="git commit"
 alias ga="git commit -ammend"
-alias mail="git config user.mail 25231320+Hajneken@users.noreply.github.com"
+alias personalgit="git config user.mail 25231320+Hajneken@users.noreply.github.com ; git config user.name 'Hynek Zemanec'"
+alias schoolgit="git config user.mail hynekz20@univie.ac.at ; git config user.name 'Hynek Zemanec'"
 
 # Python
 alias notebook="python -m notebook"
+
+# Node course
+alias learnnode="code /home/hajneken/projects/node/learning-node"
+
+#ADS 
+alias simple="./simple.sh"
+alias hard="./hard.sh"
+alias optimize="./performance.sh"
 
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
