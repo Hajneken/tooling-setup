@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="af-magic"
+ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -23,9 +23,9 @@ ZSH_THEME="af-magic"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the auto-update behavior
+# Uncomment one of the following lines to change the uto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -70,7 +70,7 @@ ZSH_THEME="af-magic"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm)
+plugins=(git nvm zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,87 +96,81 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f,underline"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias p="cd ~/projects"
+alias u="cd ~/UNI"
+alias p1="cd /home/hajnek/UNI/p1/12010957-hynek-zemanec"
+alias p2="cd /home/hajnek/UNI/p2/12010957-hynek-zemanec"
+alias p2app="cd /home/hajnek/UNI/p2/12010957-hynek-zemanec/src/app-driver-logbook"
+alias note="gedit ~/Documents/notes/'$(date '+%A_%W_%Y'.md)'"
 
-# source ~/.nvm/nvm.sh
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/home/hajneken/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "/home/hajneken/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/home/hajneken/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/home/hajneken/miniconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
 
-# Add Anaconda Python to PATH
-export PATH=/home/hajneken/anaconda3/bin:$PATH
+learnnode(){
+    code /home/hajnek/projects/learning_node ; 
+    firefox --new-tab https://www.udemy.com/course/understand-nodejs ;
+}
 
-#####################################################################################
-### The --clear option make sure Intruder cannot use your existing SSH-Agents keys 
-### i.e. Only allow cron jobs to use password less login 
-#####################################################################################
-# /usr/bin/keychain --clear $HOME/.ssh/id_rsa
-# source $HOME/.keychain/towelDispenser-sh
+# current 
+alias current="cd /home/hajnek/projects/portfolio-2_0/next/src"
 
-# Aliases 
-# ========================
-# download stuff
-# magnet:?xt=urn:btih:HASH
+#GIT 
+# configure as github user 
+github(){
+    git config user.email 25231320+Hajneken@users.noreply.github.com ;
+    git config user.name "Hynek Zemanec" ; 
+}
+
+gitlab(){
+    git config user.email hynekz20@unet.univie.ac.at ;
+    git config user.name "Hynek Zemanec" ; 
+}
+
+# magnet
 magnet() {
-    /mnt/c/Program\ Files/Transmission/transmission-qt.exe "magnet:?xt=urn:btih:$1";
+    transmission-gtk "magnet:?xt=urn:btih:$1";
 }
 
-# copy folder contents 
-nextBootStrap(){
-cp -r "/home/hajneken/projects/next/next-setup/src"* "$(pwd)";
+#copy to clipboard
+copy(){
+	$1 | xclip -sel clip
 }
 
+#Utils 
+alias c="clear"
+alias v="nvim"
+alias cat='batcat --paging=never'
+alias l='exa -lag --header'
+alias ls='exa'
 
-# productivity 
-alias pomodoro="/home/hajneken/tomatoshell/tomatoshell -f $1"
+# FZF 
+# KeyBindings
+. /usr/share/doc/fzf/examples/key-bindings.zsh
 
-# get machines IP
-alias getip="ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
+alias f='fzf --preview "batcat --style numbers --color=always {}"'
+#cd with fzf
+cdf(){cd "$(fdfind -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" && echo "$PWD" && tree -L 1 
+}
 
-# config setting here
-alias aliases="code ~/.zshrc"
-# SSH 
-alias school="ssh hynekz20@almighty.cs.univie.ac.at"
-# School
-alias MRE="cd /home/hajneken/UNI/MRE/A3/12010957-hynek-zemanec"
-alias NLP="cd /home/hajneken/UNI/NLP"
-alias VIS="cd /home/hajneken/UNI/VIS/A5"
-alias ADS="cd /home/hajneken/UNI/ADS/ADS_PROJECT"
-alias P1="cd /home/hajneken/UNI/P1/12010957-hynek-zemanec"
-
-# Projects
-alias p="cd /home/hajneken/projects"
-
-# GIT 
-alias gs="git status"
-alias gc="git commit"
-alias ga="git commit -ammend"
-alias personalgit="git config user.mail 25231320+Hajneken@users.noreply.github.com ; git config user.name 'Hynek Zemanec'"
-alias schoolgit="git config user.mail hynekz20@univie.ac.at ; git config user.name 'Hynek Zemanec'"
-
-# Python
-alias notebook="python -m notebook"
-
-# Node course
-alias learnnode="code /home/hajneken/projects/node/learning-node"
-
-#ADS 
-alias simple="./simple.sh"
-alias hard="./hard.sh"
-alias optimize="./performance.sh"
+# preview files with space
+export FZF_CTRL_T_OPTS='--preview "batcat --style numbers --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
+# preview directory tree structure with space
+export FZF_ALT_C_OPTS='--preview="exa --tree --level 1 {}" --bind="space:toggle-preview" --preview-window=:hidden'
 
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#python 
+export PATH=/home/hajnek/anaconda3/bin:$PATH
+
+#Launch Google Calendar as App
+alias calendar="firefox 'https://calendar.google.com/calendar/u/0/r'"
+
+alias plan="brave --app='https://calendar.google.com/calendar/u/0/r'; brave --new-window https://www.notion.so/hynek/TODO-774a1b148f3b4e2ea694d003d6bf6939 https://track.toggl.com/timer"
+
+alias track="firefox 'https://track.toggl.com/timer'"
+
+#ANDROID 
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
