@@ -34,3 +34,8 @@ call plug#begin("~/.vim/plugged“")
  Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+map <Leader> <Plug>(easymotion-s) " press Leader to directly go where you need to go
+colorscheme dracula "change to dracula theme
+
+                                                                      
