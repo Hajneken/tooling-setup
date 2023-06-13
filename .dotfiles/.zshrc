@@ -138,6 +138,9 @@ copy(){
 	$1 | xclip -sel clip
 }
 
+# Colors for man pages
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+
 #Utils 
 alias c="clear"
 alias v="nvim"
@@ -162,6 +165,9 @@ export FZF_ALT_C_OPTS='--preview="exa --tree --level 1 {}" --bind="space:toggle-
 
 #python 
 export PATH=/home/hajnek/anaconda3/bin:$PATH
+
+# create a new MD note 1 per each day, append to existing
+alias note='echo "# Note $(date +%Y-%m-%d_%H:%M:%S)\n\n" >> ~/docs/$(date +%Y-%m-%d)_note.md && vim +$ $(date +%Y-%m-%d)_note.md'
 
 #Launch Google Calendar as App
 alias calendar="firefox 'https://calendar.google.com/calendar/u/0/r'"
