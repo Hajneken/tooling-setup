@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="bira"
+ZSH_THEME="alanpeabody"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -23,9 +23,9 @@ ZSH_THEME="bira"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment one of the following lines to change the uto-update behavior
+# Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -68,13 +68,44 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git nvm zsh-syntax-highlighting zsh-autosuggestions)
 
+# differentiate autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f,underline"
+
 source $ZSH/oh-my-zsh.sh
 
+# use like regular cat and ls
+alias cat='bat --paging=never'
+alias l='exa -lag --header'
+alias ls='exa'
+alias vim='nvim'
+alias c="clear"
+alias mc="mc --nosubshell"
+alias p="cd /Users/hynekzemanec/projects"
+
+# ENABLE ON UBUNTU
+# alias bat="batcat"
+
+# FZF 
+# Enable Key Bindings for FZF on MAC
+. /opt/homebrew/opt/fzf/shell/key-bindings.zsh 
+
+# CTRL+T searches for files preview files with space
+export FZF_CTRL_T_OPTS='--preview "bat --style numbers --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
+# ALT+C searches for directories to change into, preview directory tree structure with space
+export FZF_ALT_C_OPTS='--preview="exa --tree --level 1 {}" --bind="space:toggle-preview" --preview-window=:hidden'
 # User configuration
+
+# COLORS for manpages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# magnet
+magnet() {
+    transmission-gtk "magnet:?xt=urn:btih:$1";
+}
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -96,87 +127,8 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f,underline"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias p="cd ~/projects"
-alias u="cd ~/UNI"
-alias p1="cd /home/hajnek/UNI/p1/12010957-hynek-zemanec"
-alias p2="cd /home/hajnek/UNI/p2/12010957-hynek-zemanec"
-alias p2app="cd /home/hajnek/UNI/p2/12010957-hynek-zemanec/src/app-driver-logbook"
-alias note="gedit ~/Documents/notes/'$(date '+%A_%W_%Y'.md)'"
 
-
-learnnode(){
-    code /home/hajnek/projects/learning_node ; 
-    firefox --new-tab https://www.udemy.com/course/understand-nodejs ;
-}
-
-# current 
-alias current="cd /home/hajnek/projects/portfolio-2_0/next/src"
-
-#GIT 
-# configure as github user 
-github(){
-    git config user.email 25231320+Hajneken@users.noreply.github.com ;
-    git config user.name "Hynek Zemanec" ; 
-}
-
-gitlab(){
-    git config user.email hynekz20@unet.univie.ac.at ;
-    git config user.name "Hynek Zemanec" ; 
-}
-
-# magnet
-magnet() {
-    transmission-gtk "magnet:?xt=urn:btih:$1";
-}
-
-#copy to clipboard
-copy(){
-	$1 | xclip -sel clip
-}
-
-# Colors for man pages
-export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
-
-#Utils 
-alias c="clear"
-alias v="nvim"
-alias cat='batcat --paging=never'
-alias l='exa -lag --header'
-alias ls='exa'
-
-# FZF 
-# KeyBindings
-. /usr/share/doc/fzf/examples/key-bindings.zsh
-
-alias f='fzf --preview "batcat --style numbers --color=always {}"'
-#cd with fzf
-cdf(){cd "$(fdfind -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)" && echo "$PWD" && tree -L 1 
-}
-
-# preview files with space
-export FZF_CTRL_T_OPTS='--preview "batcat --style numbers --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
-# preview directory tree structure with space
-export FZF_ALT_C_OPTS='--preview="exa --tree --level 1 {}" --bind="space:toggle-preview" --preview-window=:hidden'
-
-
-#python 
-export PATH=/home/hajnek/anaconda3/bin:$PATH
-
-# create a new MD note 1 per each day, append to existing
-alias note='echo "# Note $(date +%Y-%m-%d_%H:%M:%S)\n\n" >> ~/docs/$(date +%Y-%m-%d)_note.md && vim +$ $(date +%Y-%m-%d)_note.md'
-
-#Launch Google Calendar as App
-alias calendar="firefox 'https://calendar.google.com/calendar/u/0/r'"
-
-alias plan="brave --app='https://calendar.google.com/calendar/u/0/r'; brave --new-window https://www.notion.so/hynek/TODO-774a1b148f3b4e2ea694d003d6bf6939 https://track.toggl.com/timer"
-
-alias track="firefox 'https://track.toggl.com/timer'"
-
-#ANDROID 
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
