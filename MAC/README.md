@@ -48,7 +48,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 make a symlink
 
 ```shell
-ln -s ~/tooling-setup/.dotfiles/.zshrc ~/.zshrc 
+ln -s ~/tooling-setup/MAC/.dotfiles/.zshrc ~/.zshrc 
 ```
 
 ## NeoVIM (nvim)
@@ -62,7 +62,7 @@ mv ~/.vim/autoload ~/.config/nvim
 add the config file
 
 ```shell
-ln -s ~/tooling-setup/init.vim ~/.config/nvim/init.vim 
+ln -s ~/tooling-setup/MAC/init.vim ~/.config/nvim/init.vim 
 ```
 
 open `nvim` and run `:PlugInstall`
@@ -71,7 +71,7 @@ open `nvim` and run `:PlugInstall`
 information in `.tmux.conf`
 
 ```shell
-ln -s ~/tooling-setup/.dotfiles/.tmux.conf ~/.tmux.conf 
+ln -s ~/tooling-setup/MAC/.dotfiles/.tmux.conf ~/.tmux.conf 
 ```
 
 `prefix` is `alt` + `w` (on MAC `option` + `w`)
@@ -84,12 +84,3 @@ ln -s ~/tooling-setup/vscode/settings.json ~/.vscode/settings.json
 ```
 
 
-
----
-
-## Other Great Tools 
-
-* `fzf` - fuzzy finder 
-* `exa` - colorful replacement for `ls` and `tree`
-* `mc` - double pane file browser and commander (lightweight total commander/double commander for terminal) 
-* `fd` (`fdfind`) - alternative to `find` command 
