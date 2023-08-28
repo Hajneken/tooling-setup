@@ -85,6 +85,8 @@ alias vim='nvim'
 alias c="clear"
 alias mc="mc --nosubshell"
 alias p="cd /Users/hynekzemanec/projects"
+# color output for ip
+alias ip='ip -c'
 
 # ENABLE ON UBUNTU
 # alias bat="batcat"

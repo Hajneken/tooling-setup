@@ -52,6 +52,11 @@ return
     Run "C:\Users\zemanech\AppData\Local\Mozilla Firefox\firefox.exe" "https://calendar.google.com/calendar/u/0/r/day"
 return
 
+
+^F12::
+    Run "C:\Users\zemanech\AppData\Local\Mozilla Firefox\firefox.exe" "https://chat.openai.com/"
+return
+
 ; Switch to Virtual Desktop 1
 !1::
     Run "C:\users\zemanech\Work Folders\Desktop\poweruser_utils\c1.exe"

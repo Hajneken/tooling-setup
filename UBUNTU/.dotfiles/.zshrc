@@ -89,6 +89,8 @@ alias vim="nvim"
 alias cat='batcat --paging=never'
 alias l='exa -lag --header'
 alias ls='exa'
+# color output for IP
+alias ip='ip -c'
 
 copy(){
 	$1 | xclip -sel clip
