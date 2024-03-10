@@ -60,3 +60,12 @@ ln -s ~/tooling-setup/UBUNTU/init.vim ~/.config/nvim/init.vim
 ```
 
 open `nvim` and run `:PlugInstall`
+
+
+## WSL 
+
+If WSL starts as root, in PowerShell run
+
+```powershell
+ubuntu config --default-user YOURUSERNAME
+```
