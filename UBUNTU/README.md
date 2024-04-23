@@ -45,21 +45,13 @@ make a symlink
 ln -s ~/tooling-setup/UBUNTU/.dotfiles/.zshrc ~/.zshrc
 ```
 
-## NeoVIM (nvim)
+## NVCHAD (Neovim)
 
-install [vim-plug](https://github.com/junegunn/vim-plug) and move `autoload` from `~/.vim` to `~/.config/nvim`
+make a symlink to prepared config
 
-```shell
-mv ~/.vim/autoload ~/.config/nvim
+```shelltooling-setup
+ln -s ~/tooling-setup/UBUNTU/nvim ~/.config/nvim
 ```
-
-add the config file
-
-```shell
-ln -s ~/tooling-setup/UBUNTU/init.vim ~/.config/nvim/init.vim 
-```
-
-open `nvim` and run `:PlugInstall`
 
 
 ## WSL 
