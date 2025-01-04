@@ -86,8 +86,8 @@ source $ZSH/oh-my-zsh.sh
 
 # use like regular cat and ls
 alias cat='bat --paging=never'
-alias l='exa -lag --header'
-alias ls='exa'
+alias l='lsd -lag --header'
+alias ls='lsd'
 alias vim='nvim'
 alias c="clear"
 alias mc="mc --nosubshell"
