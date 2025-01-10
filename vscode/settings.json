@@ -40,7 +40,7 @@
       }
   ],
   "vim.easymotion": true,
-  "editor.fontFamily": "JetBrains Mono, 'Courier New', monospace",
+  "editor.fontFamily": "JetBrainsMono Nerd Font, 'Courier New', monospace",
   "files.autoSave": "afterDelay",
   "editor.wordWrap": "on",
   "editor.lineNumbers": "relative"

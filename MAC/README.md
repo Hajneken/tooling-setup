@@ -71,7 +71,7 @@ open `nvim` and run `:PlugInstall`
 information in `.tmux.conf`
 
 ```shell
-ln -s ~/tooling-setup/MAC/.dotfiles/.tmux.conf ~/.tmux.conf 
+ln -s ~/tooling-setup/MAC/.dotfiles/tmux.conf ~/.tmux.conf 
 ```
 
 `prefix` is `alt` + `w` (on MAC `option` + `w`)
