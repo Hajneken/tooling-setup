@@ -108,7 +108,7 @@ alias v='nvim'
 # CTRL+T searches for files preview files with space
 export FZF_CTRL_T_OPTS='--preview "bat --style numbers --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
 # ALT+C searches for directories to change into, preview directory tree structure with space
-export FZF_ALT_C_OPTS='--preview="exa --tree --level 1 {}" --bind="space:toggle-preview" --preview-window=:hidden'
+export FZF_ALT_C_OPTS='--preview="lsd --tree --depth 1 --icon=always --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
 # User configuration
 
 # COLORS for manpages
