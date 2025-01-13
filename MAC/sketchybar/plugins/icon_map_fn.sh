@@ -433,3 +433,4 @@ function icon_map() {
 icon_map "$1"
 
 echo "$icon_result"
+
