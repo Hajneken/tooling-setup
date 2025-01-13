@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEATHER_API_KEY=""
+source $CONFIG_DIR/.env
 
 HOT=0xfff5b27d
 WARM=0xfff5b27d
@@ -24,7 +24,7 @@ SNOW=􀇎
 # API_ENDPOINT="https://api.openweathermap.org/data/2.5/weather?lat=$LAT&lon=$LON&units=metric&appid=$WEATHER_API_KEY"
 
 # note HARDCODED for vienna with API don't push to github
-API_ENDPOINT="https://api.openweathermap.org/data/2.5/weather?lat=48.2583&lon=16.3377&units=metric&$WEATHER_API_KEY"
+API_ENDPOINT="https://api.openweathermap.org/data/2.5/weather?lat=48.2583&lon=16.3377&units=metric&appid=$WEATHER_API_KEY"
 
 # Only refresh weather data if older than an hour
 if [[ ! -f "plugins/weather.json" ]] || [[ $(find "plugins/weather.json" -mmin +60) ]]; then
