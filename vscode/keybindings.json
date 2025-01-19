@@ -1,0 +1,41 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+\\",
+    "command": "workbench.action.splitEditorRight"
+  },
+  {
+    "key": "cmd+k cmd+\\",
+    "command": "-workbench.action.splitEditorRight"
+  },
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile"
+  },
+
+  {
+    "key": "ctrl+shift+alt+cmd+s",
+    "command": "editor.action.insertSnippet",
+    "args": { "name": "Standalone Tag" }
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+w",
+    "command": "extension.htmlTagWrap",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+w",
+    "command": "-extension.htmlTagWrap",
+    "when": "editorTextFocus"
+  }
+]

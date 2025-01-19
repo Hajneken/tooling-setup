@@ -1,47 +1,69 @@
 {
-  "workbench.colorTheme": "Catppuccin Macchiato",
   "vim.handleKeys": {
-      "<C-w>": false,
-      "<C-x>": false,
-      "<C-f>": false,
-      "<C-c>": false,
-      "<C-v>": false
+    "<C-w>": false,
+    "<C-x>": false,
+    "<C-f>": false,
+    "<C-c>": false,
+    "<C-v>": false
   },
   "vim.normalModeKeyBindings": [
-      {
-          "before": [
-              "<C-u>"
-          ],
-          "after": [
-              "<C-u>",
-              "z",
-              "z"
-          ]
-      },
-      {
-          "before": [
-              "<C-d>"
-          ],
-          "after": [
-              "<C-d>",
-              "z",
-              "z"
-          ]
-      },
-      {
-          "before": [
-              "<leader>"
-          ],
-          "after": [
-              "<leader>",
-              "<leader>",
-              "s"
-          ]
-      }
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<leader>"],
+      "after": ["<leader>", "<leader>", "s"]
+    }
   ],
   "vim.easymotion": true,
-  "editor.fontFamily": "JetBrainsMono Nerd Font, 'Courier New', monospace",
   "files.autoSave": "afterDelay",
   "editor.wordWrap": "on",
-  "editor.lineNumbers": "relative"
+  "editor.lineNumbers": "relative",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "editor.indentSize": "tabSize",
+  "editor.tabSize": 4,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrainsMono Nerd Font, 'Courier New', monospace",
+  "go.toolsManagement.autoUpdate": true,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "search.actionsPosition": "auto",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "workbench.activityBar.location": "top",
+  "update.showReleaseNotes": false,
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.sideBar.location": "right",
+  "search.mode": "newEditor",
+  "search.searchEditor.singleClickBehaviour": "peekDefinition"
 }
