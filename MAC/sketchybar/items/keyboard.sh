@@ -1,4 +1,6 @@
-sketchybar --add item keyboard_language right
-sketchybar --set keyboard_language icon=$KEYBOARD\
-    script="$PLUGIN_DIR/keyboard_language.sh" \
-    update_freq=2
+sketchybar --add event input_change AppleSelectedInputSourcesChangedNotification
+
+sketchybar --add item keyboard_language right \
+           --set keyboard_language \
+                script="$PLUGIN_DIR/keyboard_language.sh" \
+           --subscribe keyboard_language input_change
