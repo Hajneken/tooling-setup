@@ -1,4 +1,4 @@
-{
+:q{
   "vim.handleKeys": {
     "<C-w>": false,
     "<C-x>": false,

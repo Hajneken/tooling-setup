@@ -1,18 +1,14 @@
-// Place your key bindings in this file to override the defaults
+// considering ctrl+shift+alt+cmd+a is remapped on the system to home for the usecases of Terminal 
+// home shift+\\ should really be ctrl+shift+alt+cmd+|
 [
   {
-    "key": "cmd+\\",
+    "key": "home shift+\\", 
     "command": "workbench.action.splitEditorRight"
-  },
-  {
-    "key": "cmd+k cmd+\\",
-    "command": "-workbench.action.splitEditorRight"
   },
   {
     "key": "cmd+n",
     "command": "explorer.newFile"
   },
-
   {
     "key": "ctrl+shift+alt+cmd+s",
     "command": "editor.action.insertSnippet",
@@ -30,12 +26,23 @@
   },
   {
     "key": "ctrl+shift+alt+cmd+w",
-    "command": "extension.htmlTagWrap",
+    "command": "editor.emmet.action.wrapWithAbbreviation",
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+w",
-    "command": "-extension.htmlTagWrap",
-    "when": "editorTextFocus"
+    "key": "home",
+    "command": "workbench.action.keychord.leader",
+  },
+  {
+    "key": "cmd+k",
+    "command": "-workbench.action.keychord.leader"
+  },  
+  {
+    "key": "home o",
+    "command": "workbench.action.focusNextGroup",
+  },
+  {
+    "key": "home n",
+    "command": "workbench.action.nextEditorInGroup",
   }
 ]

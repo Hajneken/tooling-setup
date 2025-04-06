@@ -1,108 +1,238 @@
 tap "dart-lang/dart"
+tap "derailed/k9s"
 tap "dracula/install"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "iina/mpv-iina"
 tap "powershell/tap"
 tap "sass/sass"
+# Color management engine supporting ICC profiles
 brew "little-cms2"
+# Image format providing lossless and lossy compression for web images
 brew "webp"
+# New file format for still image compression
 brew "jpeg-xl"
+# Codec library for encoding and decoding AV1 video streams
 brew "aom"
+# Microsoft Azure CLI 2.0
 brew "azure-cli"
+# C library of Git core methods that is re-entrant and linkable
 brew "libgit2"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Software library to render fonts
 brew "freetype"
+# Core application library for C
 brew "glib"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima", restart_service: :changed
+# Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-brew "duti"
-brew "openssl@1.1"
-brew "exa"
-brew "gnutls"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
+# Isolated development environments using Docker
+brew "docker-compose"
+# C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
+# .NET Core
+brew "dotnet@8"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# OpenType text shaping engine
 brew "harfbuzz"
+# Image processing and image analysis library
 brew "leptonica"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.13"
+# Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
+# Light HTTP/1.1 server library
 brew "libmicrohttpd"
+# Reliable Internet Stream Transport (RIST)
 brew "librist"
+# Framework for layout and rendering of i18n text
 brew "pango"
+# OCR (Optical Character Recognition) engine
 brew "tesseract"
+# Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Utilities to create and convert Web Open Font File (WOFF) files
 brew "woff2"
+# Command-line outline and bitmap font editor/converter
 brew "fontforge"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
 brew "gcc"
+# Library for encoding and decoding .avif files
 brew "libavif"
+# Graphics library to dynamically manipulate images
 brew "gd"
+# Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Image manipulation
 brew "netpbm"
+# GNU triangulated surface library
 brew "gts"
+# Library to render SVG files using Cairo
 brew "librsvg"
+# Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Configurable static site generator
 brew "hugo"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
 brew "iperf3"
+# CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
+# Interactive computing in Python
+brew "ipython"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Interactive environments for writing and running code
 brew "jupyterlab"
+# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
+# Web and API based SMTP testing tool
+brew "mailhog"
+# Java-based project management
+brew "maven"
+# Terminal-based visual file manager
 brew "midnight-commander"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-brew "openjdk"
+# OpenShift command-line interface tools
+brew "openshift-cli"
+# Draw UML diagrams
 brew "plantuml"
+# Theme for zsh
 brew "powerlevel10k"
+# Persistent key-value database, with built-in net interface
+brew "redis"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Extremely fast tool to remove dupes and other lint from your filesystem
 brew "rmlint"
+# Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# User interface to the TELNET protocol
 brew "telnet"
+# Simplified and community-driven man pages
+brew "tldr"
+# Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Internet file retriever
 brew "wget"
+# Library to create, extract, and modify Windows Imaging files
 brew "wimlib"
+# Tools for the WireGuard secure network tunnel
 brew "wireguard-tools"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s"
+# Custom macOS statusbar with shell plugin, interaction and graph support
 brew "felixkratz/formulae/sketchybar"
+# Formula to install PowerShell
 brew "powershell/tap/powershell"
+# Stylesheet Preprocessor
 brew "sass/sass/sass"
+# GPU-accelerated terminal emulator
 cask "alacritty"
+# Automatic tiling window manager similar to xmonad
 cask "amethyst"
+# Memory training application
 cask "anki"
+# Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
+# Desktop password and login vault
+cask "bitwarden"
+# Transcribes and translates audio
 cask "buzz"
+# Universal database tool and SQL client
 cask "dbeaver-community"
+# Developer platform
+cask "dotnet-sdk"
+# File manager with two panels
 cask "double-commander"
+# Dark theme for Terminal.app
 cask "dracula-terminal"
+# Web browser
 cask "firefox"
 cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-sf-pro"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
 cask "google-chrome"
+# Tools to protect your emails and files
 cask "gpg-suite"
+# HTTP and GraphQL Client
 cask "insomnia"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Remote desktop application
+cask "jump"
+# Keyboard customiser
 cask "karabiner-elements"
+# Password manager app
+cask "keepassxc"
+# Tool to prevent the system from going into sleep mode
 cask "keepingyouawake"
+# Open-source keystroke visualiser
 cask "keycastr"
+# Clipboard manager
 cask "maccy"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
+# Menu bar indicator showing the currently selected space
 cask "spaceid"
+# Quick Look plugin to preview .strings files
 cask "stringsfile"
+# Quicklook extension for source files
 cask "syntax-highlight"
+# Open-source BitTorrent client
 cask "transmission"
+# File system and storage management software
 cask "tuxera-ntfs"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Remote desktop application focusing on security
 cask "vnc-viewer"
+# Video communication and virtual meeting platform
 cask "zoom"
+# Collect, organise, cite, and share research sources
 cask "zotero"
 vscode "bierner.markdown-mermaid"
 vscode "blanu.vscode-styled-jsx"
-vscode "bradgashler.htmltagwrap"
+vscode "budparr.language-hugo-vscode"
 vscode "catppuccin.catppuccin-vsc"
 vscode "catppuccin.catppuccin-vsc-icons"
 vscode "dbaeumer.vscode-eslint"
@@ -114,17 +244,30 @@ vscode "formulahendry.auto-rename-tag"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "golang.go"
+vscode "inferrinizzard.prettier-sql-vscode"
 vscode "jebbs.plantuml"
 vscode "loczek.next-js-ts-snippets"
 vscode "ms-azuretools.vscode-docker"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "ms-vscode-remote.remote-containers"
 vscode "pulkitgangwar.nextjs-snippets"
+vscode "redhat.java"
 vscode "redhat.vscode-xml"
 vscode "ritwickdey.liveserver"
 vscode "tomoki1207.pdf"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "vscjava.vscode-gradle"
+vscode "vscjava.vscode-java-debug"
+vscode "vscjava.vscode-java-dependency"
+vscode "vscjava.vscode-java-pack"
+vscode "vscjava.vscode-java-test"
+vscode "vscjava.vscode-maven"
 vscode "vscode-icons-team.vscode-icons"
 vscode "vscodevim.vim"
 vscode "well-ar.plantuml"
