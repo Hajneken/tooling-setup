@@ -26,7 +26,8 @@ fi
 
 # sync contents of .configfiles dir with ~/.configfiles dir (create it if it doesn't exist)
 mkdir -p ~/.configfiles
-rsync -av --exclude='.git' --exclude='.DS_Store' .configfiles/ ~/.configfiles/
+# delete option for mirror sync i.e. delete files in ~/.configfiles that are not in ./.configfiles
+rsync -av --delete --exclude='.git' --exclude='.DS_Store' ./.configfiles/ ~/.configfiles/
 
 # create symlinks for all files in ~/.configfiles
 cd ~/.configfiles && stow .
