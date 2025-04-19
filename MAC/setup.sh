@@ -9,13 +9,13 @@ then
 fi
 
 # install apps from Brewfile
-if [ -f Brewfile ]; then
-    echo "Installing apps from Brewfile..."
-    brew bundle
-else
-    echo "Brewfile not found. Please make sure it exists in the current directory."
-    exit 1
-fi
+# if [ -f Brewfile ]; then
+#     echo "Installing apps from Brewfile..."
+#     brew bundle
+# else
+#     echo "Brewfile not found. Please make sure it exists in the current directory."
+#     exit 1
+# fi
 
 # check if stow is installed
 if ! command -v stow &> /dev/null
