@@ -32,5 +32,8 @@ rsync -av --delete --exclude='.git' --exclude='.DS_Store' ./.configfiles/ ~/.con
 # create symlinks for all files in ~/.configfiles
 cd ~/.configfiles && stow .
 
+# reload sketchybar
+sketchybar --reload
+
 
 

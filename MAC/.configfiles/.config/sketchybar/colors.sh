@@ -1,11 +1,18 @@
 i#!/bin/bash
 
 export WHITE=0xffffffff
+export BLACK=0xff000000
+
+# -- CUSTOM Scheme --
+export BAR_COLOR=0xff001f30
+export ITEM_BG_COLOR=0x33000000
+export ACCENT_COLOR=0xff2cf9ed
+
 
 # -- Teal Scheme --
-export BAR_COLOR=0xff001f30
-export ITEM_BG_COLOR=0xff003547
-export ACCENT_COLOR=0xff2cf9ed
+# export BAR_COLOR=0xff001f30
+# export ITEM_BG_COLOR=0xff003547
+# export ACCENT_COLOR=0xff2cf9ed
 
 # -- Gray Scheme --
 # export BAR_COLOR=0xff101314
