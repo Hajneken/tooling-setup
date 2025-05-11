@@ -4,17 +4,62 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Hyper+S to Command+Shift+S in Outlook",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "left_shift",
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Outlook$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper+/ to control+f2",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "slash",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f2",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -27,7 +72,14 @@
                             {
                                 "from": {
                                     "key_code": "f3",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -47,7 +99,14 @@
                             {
                                 "from": {
                                     "key_code": "f2",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -67,7 +126,14 @@
                             {
                                 "from": {
                                     "key_code": "f1",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -87,12 +153,20 @@
                                 "description": "Change caps_lock to command+control+option+shift.",
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -105,9 +179,20 @@
                             {
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "home" }],
+                                "to": [
+                                    {
+                                        "key_code": "home"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -118,12 +203,21 @@
                             {
                                 "from": {
                                     "key_code": "c",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": ["left_option"]
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -136,12 +230,21 @@
                             {
                                 "from": {
                                     "key_code": "r",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "t",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -154,12 +257,21 @@
                             {
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "k",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -172,12 +284,21 @@
                             {
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "l",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -188,7 +309,9 @@
             },
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "ansi"
+            }
         }
     ]
 }

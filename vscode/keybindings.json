@@ -44,5 +44,9 @@
   {
     "key": "home n",
     "command": "workbench.action.nextEditorInGroup",
+  },
+  {
+    "key": "cmd+d",
+    "command": "go.debug.cursor"
   }
 ]
