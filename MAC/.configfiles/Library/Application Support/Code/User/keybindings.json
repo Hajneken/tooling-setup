@@ -1,8 +1,8 @@
-// considering ctrl+shift+alt+cmd+a is remapped on the system to home for the usecases of Terminal
+// considering ctrl+shift+alt+cmd+a is remapped on the system to home for the usecases of Terminal 
 // home shift+\\ should really be ctrl+shift+alt+cmd+|
 [
   {
-    "key": "home shift+\\",
+    "key": "home shift+\\", 
     "command": "workbench.action.splitEditorRight"
   },
   {
@@ -15,11 +15,6 @@
     "args": { "name": "Standalone Tag" }
   },
   {
-    "key": "ctrl+shift+alt+cmd+w",
-    "command": "editor.action.insertSnippet",
-    "args": { "name": "Tag" },
-  },
-  {
     "key": "ctrl+shift+alt+cmd+f",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
@@ -30,32 +25,33 @@
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
+    "key": "ctrl+shift+alt+cmd+w",
+    "command": "editor.emmet.action.wrapWithAbbreviation",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "home",
-    "command": "workbench.action.keychord.leader"
+    "command": "workbench.action.keychord.leader",
   },
   {
     "key": "cmd+k",
     "command": "-workbench.action.keychord.leader"
-  },
+  },  
   {
     "key": "home o",
-    "command": "workbench.action.focusNextGroup"
+    "command": "workbench.action.focusNextGroup",
   },
   {
     "key": "home n",
-    "command": "workbench.action.nextEditorInGroup"
+    "command": "workbench.action.nextEditorInGroup",
   },
   {
     "key": "cmd+d",
     "command": "go.debug.cursor"
   },
   {
-    "key": "ctrl+shift+alt+cmd+i",
-    "command": "editor.action.openLink",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "home c",
-    "command": "copyRelativeFilePath"
-  }
+  "key": "ctrl+shift+alt+cmd+i",
+  "command": "editor.action.openLink",
+  "when": "editorTextFocus"
+}
 ]

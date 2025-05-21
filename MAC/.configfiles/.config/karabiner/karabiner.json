@@ -4,6 +4,33 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Hyper+Space to Control+Space",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                   {
                         "description": "Hyper+S to Control+Command+S in Perplexity",
                         "manipulators": [
                             {
