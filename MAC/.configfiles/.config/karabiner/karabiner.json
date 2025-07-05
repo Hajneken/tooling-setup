@@ -4,6 +4,41 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Notion: Remap Hyper+S to Cmd+\\",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^notion\\.id$"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper+Space to Control+Space",
                         "manipulators": [
                             {
@@ -30,7 +65,7 @@
                             }
                         ]
                     },
-                   {
+                    {
                         "description": "Hyper+S to Control+Command+S in Perplexity",
                         "manipulators": [
                             {

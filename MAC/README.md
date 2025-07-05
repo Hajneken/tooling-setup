@@ -1,5 +1,9 @@
 # MAC 
 
+## Update
+1. run `./sync.sh`
+2. and update using `./update.sh`
+
 ## Environment Setup
 
 1. Check preequisites first
