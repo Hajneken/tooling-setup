@@ -91,5 +91,20 @@
   {
     "key": "cmd+f12",
     "command": "editor.action.peekTypeDefinition"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+i",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+cmd+i",
+    "command": "-workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+o",
+    "command": "github.copilot.completions.toggle",
+    "when": "github.copilot.activated"
   }
 ]
