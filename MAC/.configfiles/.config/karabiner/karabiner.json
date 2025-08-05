@@ -272,9 +272,18 @@
                         ]
                     },
                     {
-                        "description": "Hyper+A to Home",
+                        "description": "Hyper+A to Home in Alacritty or VS Code",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^org\\.alacritty$",
+                                            "^com\\.microsoft\\.VSCode$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
@@ -294,7 +303,7 @@
                                 "type": "basic"
                             }
                         ]
-                    },
+                    }
                     {
                         "description": "Hyper+C to option+C",
                         "manipulators": [
