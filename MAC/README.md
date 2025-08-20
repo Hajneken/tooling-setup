@@ -1,8 +1,10 @@
 # MAC 
 
+## First Use 
+run `./setup.sh`
+
 ## Update
-1. run `./sync.sh`
-2. and update using `./update.sh`
+run `./update.sh`
 
 ## Environment Setup
 
