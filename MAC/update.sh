@@ -6,3 +6,5 @@
 cd ~/.configfiles && stow -R .
 
 echo "All Configs Updated!"
+
+source ~/.zshrc
