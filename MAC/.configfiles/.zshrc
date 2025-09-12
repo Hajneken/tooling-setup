@@ -90,6 +90,11 @@ alias v='nvim'
 alias k='kubectl'
 alias docker='podman'
 
+
+
+
+
+
 # FZF 
 # Enable Key Bindings for FZF on MAC
 . /opt/homebrew/opt/fzf/shell/key-bindings.zsh 
@@ -133,5 +138,18 @@ export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 alias nvm="unalias nvm; [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"; nvm $@"
+
+# https://github.com/rupa/z
+. /opt/homebrew/etc/profile.d/z.sh
+
+# to use with fzf we need to unalias z 
+unalias z 2> /dev/null
+
+z() {
+  local dir=$(
+    _z 2>&1 |
+    fzf --height 40% --layout reverse --info inline --nth 2.. --tac --no-sort --query "$*" --accept-nth 2..
+  ) && cd "$dir"
+}
 
 eval "$(starship init zsh)"
