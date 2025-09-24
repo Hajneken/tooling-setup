@@ -42,10 +42,11 @@ fi
 . /opt/homebrew/opt/fzf/shell/key-bindings.zsh 
 
 # CTRL+T searches for files preview files with space
-export FZF_CTRL_T_OPTS='--preview "bat --style numbers --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
+export FZF_CTRL_T_OPTS='--style full --input-label " 📄 File Search " --preview "bat --style numbers --color=always {}" --bind="space:toggle-preview"'
 # ALT+C searches for directories to change into, preview directory tree structure with space
-export FZF_ALT_C_OPTS='--preview="lsd --tree --depth 1 --icon=always --color=always {}" --bind="space:toggle-preview" --preview-window=:hidden'
+export FZF_ALT_C_OPTS='--style full --input-label " 📂 Directory Search " --preview="lsd --tree --depth 1 --icon=always --color=always {}" --bind="space:toggle-preview"'
 # User configuration
+export FZF_CTRL_R_OPTS='--style full --input-label " 🔍 Command Search "'
 
 # COLORS for manpages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -72,7 +73,7 @@ unalias z 2> /dev/null
 z() {
   local dir=$(
     _z 2>&1 |
-    fzf --height 40% --layout reverse --info inline --nth 2.. --tac --no-sort --query "$*" --accept-nth 2..
+    fzf --layout reverse --info inline --nth 2.. --tac --no-sort --query "$*" --accept-nth 2..
   ) && cd "$dir"
 }
 
