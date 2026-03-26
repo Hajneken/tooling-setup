@@ -106,5 +106,15 @@
     "key": "ctrl+shift+alt+cmd+o",
     "command": "github.copilot.completions.toggle",
     "when": "github.copilot.activated"
+  },
+  {
+    "key": "cmd+e",
+    "command": "markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId =~ /^(markdown|prompt|instructions|chatagent|skill)$/"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId =~ /^(markdown|prompt|instructions|chatagent|skill)$/"
   }
 ]

@@ -1,0 +1,9 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 16
+font-style = SemiBold
+font-style-bold = ExtraBold
+theme = Catppuccin Mocha
+background-opacity = 0.98 
+#fullscreen=non-native
+window-padding-x = 5
+maximize = true

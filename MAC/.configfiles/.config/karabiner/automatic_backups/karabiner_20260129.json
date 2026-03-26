@@ -4,132 +4,37 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Command+o to control+o in Terminal",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "o",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Command+e to control+e in Terminal",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "e",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "e",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Hyper+S to control+S in Terminal",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "s",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Remap Hyper+A for Screenshot arrow markup in Preview",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Preview$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "a",
-                                        "modifiers": ["left_control", "left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Notion: Remap Hyper+S to Cmd+\\",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^notion\\.id$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "s",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "backslash",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
                                     }
                                 ],
-                                "type": "basic"
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^notion\\.id$"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -137,17 +42,26 @@
                         "description": "Hyper+Space to Control+Space",
                         "manipulators": [
                             {
+                                "type": "basic",
                                 "from": {
                                     "key_code": "spacebar",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "spacebar",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
-                                ],
-                                "type": "basic"
+                                ]
                             }
                         ]
                     },
@@ -155,25 +69,35 @@
                         "description": "Hyper+S to Control+Command+S in Perplexity",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^ai\\.perplexity\\.mac$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "s",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "s",
-                                        "modifiers": ["left_command", "left_control"]
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
                                     }
                                 ],
-                                "type": "basic"
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^ai\\.perplexity\\.mac$"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -181,25 +105,35 @@
                         "description": "Hyper+S to Command+Shift+S in Outlook",
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.Outlook$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
+                                "type": "basic",
                                 "from": {
                                     "key_code": "s",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "close_bracket",
-                                        "modifiers": ["left_shift", "left_command"]
+                                        "modifiers": [
+                                            "left_shift",
+                                            "left_command"
+                                        ]
                                     }
                                 ],
-                                "type": "basic"
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.Outlook$"
+                                        ]
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -209,12 +143,21 @@
                             {
                                 "from": {
                                     "key_code": "slash",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f2",
-                                        "modifiers": ["control"]
+                                        "modifiers": [
+                                            "control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -222,25 +165,34 @@
                         ]
                     },
                     {
-                        "description": "Hyper+F to control+T in Terminal",
+                        "description": "Hyper+F to control+T in Alacritty",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$"
+                                            "^org\\.alacritty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "t",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -248,25 +200,34 @@
                         ]
                     },
                     {
-                        "description": "Hyper+R to control+R in Terminal",
+                        "description": "Hyper+R to control+R in Alacritty",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$"
+                                            "^org\\.alacritty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "r",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "r",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -274,22 +235,33 @@
                         ]
                     },
                     {
-                        "description": "Hyper+J/K to arrow keys in Terminal",
+                        "description": "Hyper+J/K to arrow keys in Alacritty",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$"
+                                            "^org\\.alacritty$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "j",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "down_arrow" }],
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -303,9 +275,20 @@
                                 ],
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "up_arrow" }],
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -316,7 +299,14 @@
                             {
                                 "from": {
                                     "key_code": "f3",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -336,7 +326,14 @@
                             {
                                 "from": {
                                     "key_code": "f2",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -356,7 +353,14 @@
                             {
                                 "from": {
                                     "key_code": "f1",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
@@ -376,12 +380,20 @@
                                 "description": "Change caps_lock to command+control+option+shift.",
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -389,13 +401,13 @@
                         ]
                     },
                     {
-                        "description": "Hyper+A to Home in Terminal or VS Code",
+                        "description": "Hyper+A to Home in Alacritty or VS Code",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^com.mitchellh.ghostty$",
+                                            "^org\\.alacritty$",
                                             "^com\\.microsoft\\.VSCode$"
                                         ],
                                         "type": "frontmost_application_if"
@@ -403,9 +415,20 @@
                                 ],
                                 "from": {
                                     "key_code": "a",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_option", "left_shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
-                                "to": [{ "key_code": "home" }],
+                                "to": [
+                                    {
+                                        "key_code": "home"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -416,12 +439,21 @@
                             {
                                 "from": {
                                     "key_code": "c",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": ["left_option"]
+                                        "modifiers": [
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -434,12 +466,21 @@
                             {
                                 "from": {
                                     "key_code": "r",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "t",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -452,12 +493,21 @@
                             {
                                 "from": {
                                     "key_code": "k",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "k",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -470,12 +520,21 @@
                             {
                                 "from": {
                                     "key_code": "l",
-                                    "modifiers": { "mandatory": ["command", "control", "option", "shift"] }
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "control",
+                                            "option",
+                                            "shift"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
                                         "key_code": "l",
-                                        "modifiers": ["left_control"]
+                                        "modifiers": [
+                                            "left_control"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -486,7 +545,9 @@
             },
             "name": "Default profile",
             "selected": true,
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+            "virtual_hid_keyboard": {
+                "keyboard_type_v2": "ansi"
+            }
         }
     ]
 }
