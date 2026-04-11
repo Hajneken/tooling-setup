@@ -1,0 +1,10 @@
+{
+	"optOut": false,
+	"lastUpdateCheck": 1771491904998,
+	"update": {
+		"latest": "8.0.0",
+		"current": "7.7.0",
+		"type": "major",
+		"name": "@hubspot/cli"
+	}
+}

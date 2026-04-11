@@ -34,3 +34,4 @@ mode = "execute"
 description = "Re-opens tv in the parent directory"
 command = "tv files .."
 mode = "execute"
+

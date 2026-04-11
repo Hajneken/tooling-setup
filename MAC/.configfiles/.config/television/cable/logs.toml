@@ -1,0 +1,24 @@
+[metadata]
+name = "logs"
+description = "A channel to find and select text from files"
+requirements = ["logalize", "bat", "oc"]
+
+[source]
+command = 'oc logs "$(oc get pods -o name | grep -E "^pod/sith-hubspot-.{10}-.{5}$" )"'
+
+[preview]
+command = "echo '{}'"
+ansi = true
+
+[keybindings]
+
+
+[actions.edit]
+description = "Open file in editor at line"
+command = "${EDITOR:-vim} '+{strip_ansi|split:\\::1}' '{strip_ansi|split:\\::0}'"
+shell = "bash"
+mode = "execute"
+
+[ui]
+preview_panel = { size = 60, scrollbar = true }
+

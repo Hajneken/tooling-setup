@@ -33,9 +33,9 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # lazyload fzf
-if [[ $- == *i* ]]; then
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fi
+# if [[ $- == *i* ]]; then
+#   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fi
 
 # FZF 
 # Enable Key Bindings for FZF on MAC
@@ -64,23 +64,6 @@ alias v='nvim'
 alias k='kubectl'
 alias docker='podman'
 
-# https://github.com/rupa/z
-. /opt/homebrew/etc/profile.d/z.sh
-
-# to use with fzf we need to unalias z 
-unalias z 2> /dev/null
-
-z() {
-  local dir=$(
-    _z 2>&1 |
-    fzf --layout reverse --info inline --nth 2.. --tac --no-sort --query "$*" --accept-nth 2..
-  ) && cd "$dir"
-}
-
-# vi bindings in shell 
-bindkey -v
-# just because it might be buggy  
-export KEYTIMEOUT=1
 
 # zprof
 # Added by LM Studio CLI (lms)

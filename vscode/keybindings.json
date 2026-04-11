@@ -20,7 +20,7 @@
     "args": { "name": "Tag" },
   },
   {
-    "key": "ctrl+shift+alt+cmd+f",
+    "key": "alt+f",
     "command": "editor.action.formatDocument",
     "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
