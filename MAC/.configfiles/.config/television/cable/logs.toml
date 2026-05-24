@@ -1,16 +1,23 @@
 [metadata]
 name = "logs"
 description = "A channel to find and select text from files"
-requirements = ["logalize", "bat", "oc"]
+requirements = ["echo","bat", "oc", "jq"]
 
 [source]
 command = 'oc logs "$(oc get pods -o name | grep -E "^pod/sith-hubspot-.{10}-.{5}$" )"'
 
 [preview]
-command = "echo '{}'"
-ansi = true
+command = "echo '{}'| jq . | bat -n --color=always --language json"
+env = { BAT_THEME = "Catppuccin Mocha" }
+# command = "bat -n --color=always '{}'"
 
 [keybindings]
+ctrl-e = "actions:open"
+
+[actions.open]
+description = "Opens the selected entries with the default application"
+command = "echo '{}' > /tmp/tv-logs.txt && code /tmp/tv-logs.txt"
+mode = "execute"
 
 
 [actions.edit]

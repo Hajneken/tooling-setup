@@ -102,3 +102,6 @@ zle -N tv-text-widget
 bindkey '^T' tv-files-widget
 bindkey '^[c' tv-dirs-widget
 bindkey '^s' tv-text-widget
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/vault vault
